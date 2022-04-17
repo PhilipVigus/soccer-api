@@ -3,5 +3,5 @@ package com.philvigus.soccerapidomain.repositories;
 import com.philvigus.soccerapidomain.entities.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TeamRepository extends JpaRepository<Team, Long> {
-}
+/** The Team repository interface. */
+public interface TeamRepository extends JpaRepository<Team, Long> {}

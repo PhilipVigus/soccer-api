@@ -7,11 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-/**
- * Represents a soccer team entity.
- *
- * @author <a href="www.philvigus.com">Phil Vigus</a>
- */
+/** Represents a soccer team entity. */
 @Getter
 @Setter
 @NoArgsConstructor
