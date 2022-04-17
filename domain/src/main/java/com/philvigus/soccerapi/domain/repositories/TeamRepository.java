@@ -1,6 +1,6 @@
-package com.philvigus.soccerapidomain.repositories;
+package com.philvigus.soccerapi.domain.repositories;
 
-import com.philvigus.soccerapidomain.entities.Team;
+import com.philvigus.soccerapi.domain.entities.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /** The Team repository interface. */

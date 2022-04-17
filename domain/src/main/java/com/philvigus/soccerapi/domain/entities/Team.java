@@ -1,4 +1,4 @@
-package com.philvigus.soccerapidomain.entities;
+package com.philvigus.soccerapi.domain.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

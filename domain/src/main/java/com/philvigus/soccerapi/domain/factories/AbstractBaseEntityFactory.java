@@ -1,4 +1,4 @@
-package com.philvigus.soccerapidomain.factories;
+package com.philvigus.soccerapi.domain.factories;
 
 import net.datafaker.Faker;
 import org.springframework.data.jpa.repository.JpaRepository;

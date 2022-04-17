@@ -1,4 +1,4 @@
-package com.philvigus.soccerapidomain.factories;
+package com.philvigus.soccerapi.domain.factories;
 
 /** A general exception used by entity factories. */
 public class FactoryException extends RuntimeException {

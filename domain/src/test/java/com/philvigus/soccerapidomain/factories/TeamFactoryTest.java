@@ -1,7 +1,9 @@
 package com.philvigus.soccerapidomain.factories;
 
-import com.philvigus.soccerapidomain.entities.Team;
-import com.philvigus.soccerapidomain.repositories.TeamRepository;
+import com.philvigus.soccerapi.domain.entities.Team;
+import com.philvigus.soccerapi.domain.factories.FactoryException;
+import com.philvigus.soccerapi.domain.factories.TeamFactory;
+import com.philvigus.soccerapi.domain.repositories.TeamRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
