@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/** An implementation of the {@link TeamService TeamService} interface. */
+/** An implementation of the TeamService interface. */
 @Service
 public class TeamServiceImpl implements TeamService {
   private final TeamRepository teamRepository;

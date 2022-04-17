@@ -34,7 +34,7 @@ class TeamsControllerIntegrationTest {
   void whenGetTeamsThenReturnsAllTeams() throws Exception {
     teamFactory = new TeamFactory(teamRepository);
 
-    List<Team> teams = teamFactory.create(2);
+    final List<Team> teams = teamFactory.create(2);
 
     mockMvc
         .perform(get("/teams"))
