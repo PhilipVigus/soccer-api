@@ -1,6 +1,5 @@
-package com.philvigus.soccerapidomain.entities;
+package com.philvigus.soccerapi.domain.entities;
 
-import com.philvigus.soccerapi.domain.entities.Team;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

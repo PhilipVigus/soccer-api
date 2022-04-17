@@ -1,8 +1,6 @@
-package com.philvigus.soccerapidomain.factories;
+package com.philvigus.soccerapi.domain.factories;
 
 import com.philvigus.soccerapi.domain.entities.Team;
-import com.philvigus.soccerapi.domain.factories.FactoryException;
-import com.philvigus.soccerapi.domain.factories.TeamFactory;
 import com.philvigus.soccerapi.domain.repositories.TeamRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

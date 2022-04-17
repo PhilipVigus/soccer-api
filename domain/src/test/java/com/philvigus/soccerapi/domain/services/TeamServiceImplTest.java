@@ -1,8 +1,7 @@
-package com.philvigus.soccerapidomain.services;
+package com.philvigus.soccerapi.domain.services;
 
 import com.philvigus.soccerapi.domain.entities.Team;
 import com.philvigus.soccerapi.domain.repositories.TeamRepository;
-import com.philvigus.soccerapi.domain.services.TeamServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
