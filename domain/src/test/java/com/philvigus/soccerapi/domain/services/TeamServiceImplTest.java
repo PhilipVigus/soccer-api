@@ -26,7 +26,7 @@ class TeamServiceImplTest {
 
   @Test
   @DisplayName("save should call save on the service repository")
-  void saveCallsRepositorySave() {
+  void saveShouldCallRepositorySave() {
     final Team team = new Team();
     team.setName("test name");
 
