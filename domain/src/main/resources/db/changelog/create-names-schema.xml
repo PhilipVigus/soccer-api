@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02" author="philv">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="names"/>
+            </not>
+        </preConditions>
+        <createTable tableName="names"
+                     remarks="Name Data">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="content" type="varchar(255)">
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column name="used_from" type="datetime">
+                <constraints nullable="true" unique="false"/>
+            </column>
+            <column name="used_to" type="datetime">
+                <constraints nullable="true" unique="false"/>
+            </column>
+            <column name="is_primary" type="bool">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
