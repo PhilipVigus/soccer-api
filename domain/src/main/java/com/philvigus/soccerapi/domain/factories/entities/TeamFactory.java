@@ -1,6 +1,7 @@
-package com.philvigus.soccerapi.domain.factories;
+package com.philvigus.soccerapi.domain.factories.entities;
 
 import com.philvigus.soccerapi.domain.entities.Team;
+import com.philvigus.soccerapi.domain.factories.AbstractBaseEntityFactory;
 import com.philvigus.soccerapi.domain.repositories.TeamRepository;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
 package com.philvigus.soccerapi.api.controllers;
 
 import com.philvigus.soccerapi.domain.entities.Team;
-import com.philvigus.soccerapi.domain.factories.TeamFactory;
+import com.philvigus.soccerapi.domain.factories.entities.TeamFactory;
 import com.philvigus.soccerapi.domain.repositories.TeamRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
