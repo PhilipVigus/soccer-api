@@ -37,9 +37,18 @@ class TeamServiceImplTest {
 
   @Test
   @DisplayName("findAll should call findAll on the service repository")
-  void findAllCallsRepositoryFindAll() {
+  void findAllShouldCallRepositoryFindAll() {
     teamService.findAll();
 
     verify(teamRepository, times(1)).findAll();
+  }
+
+  @Test
+  @DisplayName("findById should call findById on the service repository")
+  void findByIdShouldCallRepositoryFindById() {
+    final Long id = 1L;
+    teamService.findById(id);
+
+    verify(teamRepository, times(1)).findById(id);
   }
 }

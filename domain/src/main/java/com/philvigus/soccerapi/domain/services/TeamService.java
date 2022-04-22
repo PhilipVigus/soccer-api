@@ -3,6 +3,7 @@ package com.philvigus.soccerapi.domain.services;
 import com.philvigus.soccerapi.domain.entities.Team;
 
 import java.util.List;
+import java.util.Optional;
 
 /** The TeamService interface */
 public interface TeamService {
@@ -20,4 +21,6 @@ public interface TeamService {
    * @return the list of teams
    */
   List<Team> findAll();
+
+  Optional<Team> findById(Long id);
 }
