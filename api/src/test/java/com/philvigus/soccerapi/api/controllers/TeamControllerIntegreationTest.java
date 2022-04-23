@@ -3,6 +3,7 @@ package com.philvigus.soccerapi.api.controllers;
 import com.philvigus.soccerapi.domain.entities.Team;
 import com.philvigus.soccerapi.domain.factories.entities.TeamFactory;
 import com.philvigus.soccerapi.domain.repositories.TeamRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,11 +31,15 @@ class TeamsControllerIntegrationTest {
 
   @Autowired MockMvc mockMvc;
 
-  @Test
-  @DisplayName("When the GET /teams is hit it returns all teams")
-  void whenGetTeamsThenReturnsAllTeams() throws Exception {
+  @BeforeEach
+  void setUp() {
     teamFactory = new TeamFactory(teamRepository);
+  }
 
+  @Test
+  @DisplayName("When GET /teams is hit it returns all teams")
+  @Transactional
+  void whenGetTeamsThenReturnsAllTeams() throws Exception {
     final List<Team> teams = teamFactory.create(2);
 
     mockMvc
@@ -42,5 +48,30 @@ class TeamsControllerIntegrationTest {
         .andExpect(jsonPath("$", hasSize(2)))
         .andExpect(jsonPath("$[0].name").value(teams.get(0).getName()))
         .andExpect(jsonPath("$[1].name").value(teams.get(1).getName()));
+  }
+
+  @Test
+  @DisplayName("When GET /teams/{id} is hit it returns the team with the specified id")
+  @Transactional
+  void whenGetTeamsIdThenReturnsTeamWithId() throws Exception {
+    final Team team = teamFactory.create();
+
+    mockMvc
+        .perform(get("/teams/" + team.getId()))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.id").value(team.getId()))
+        .andExpect(jsonPath("$.name").value(team.getName()));
+  }
+
+  @Test
+  @DisplayName(
+      "When GET /teams/{id} is hit with an id that doesn't exist, it returns a not found error")
+  @Transactional
+  void whenGetTeamsInvalidIdThenReturnsError() throws Exception {
+    mockMvc
+        .perform(get("/teams/12345678"))
+        .andExpect(status().isNotFound())
+        .andExpect(jsonPath("$.status").value("NOT_FOUND"))
+        .andExpect(jsonPath("$.error").value("Team with id:12345678 not found"));
   }
 }
