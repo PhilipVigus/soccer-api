@@ -60,7 +60,9 @@ class TeamsControllerIntegrationTest {
         .perform(get("/teams/" + team.getId()))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.id").value(team.getId()))
-        .andExpect(jsonPath("$.name").value(team.getName()));
+        .andExpect(jsonPath("$.name").value(team.getName()))
+        .andExpect(jsonPath("$.foundedIn").value(team.getFoundedIn()))
+        .andExpect(jsonPath("$.disbandedIn").value(team.getDisbandedIn()));
   }
 
   @Test
