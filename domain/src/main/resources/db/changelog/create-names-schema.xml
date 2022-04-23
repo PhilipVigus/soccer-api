@@ -6,25 +6,28 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="01" author="philv">
+    <changeSet id="02" author="philv">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="teams"/>
+                <tableExists tableName="names"/>
             </not>
         </preConditions>
-        <createTable tableName="teams"
-                     remarks="Team Data">
+        <createTable tableName="names"
+                     remarks="Name Data">
             <column name="id" type="int" autoIncrement="true">
                 <constraints nullable="false" unique="true" primaryKey="true"/>
             </column>
-            <column name="name" type="varchar(255)">
+            <column name="content" type="varchar(255)">
                 <constraints nullable="false" unique="false"/>
             </column>
-            <column name="founded_in" type="int">
+            <column name="used_from" type="datetime">
                 <constraints nullable="true" unique="false"/>
             </column>
-            <column name="disbanded_in" type="int">
+            <column name="used_to" type="datetime">
                 <constraints nullable="true" unique="false"/>
+            </column>
+            <column name="is_primary" type="bool">
+                <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>

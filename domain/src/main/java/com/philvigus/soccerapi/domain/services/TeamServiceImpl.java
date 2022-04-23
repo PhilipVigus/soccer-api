@@ -5,8 +5,9 @@ import com.philvigus.soccerapi.domain.repositories.TeamRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-/** An implementation of the {@link TeamService TeamService} interface. */
+/** An implementation of the TeamService interface. */
 @Service
 public class TeamServiceImpl implements TeamService {
   private final TeamRepository teamRepository;
@@ -28,5 +29,10 @@ public class TeamServiceImpl implements TeamService {
   @Override
   public List<Team> findAll() {
     return teamRepository.findAll();
+  }
+
+  @Override
+  public Optional<Team> findById(Long id) {
+    return teamRepository.findById(id);
   }
 }

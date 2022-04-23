@@ -1,6 +1,7 @@
-package com.philvigus.soccerapi.domain.factories;
+package com.philvigus.soccerapi.domain.factories.entities;
 
 import com.philvigus.soccerapi.domain.entities.Team;
+import com.philvigus.soccerapi.domain.factories.AbstractBaseEntityFactory;
 import com.philvigus.soccerapi.domain.repositories.TeamRepository;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +25,12 @@ public class TeamFactory extends AbstractBaseEntityFactory<Team> {
   protected Map<String, Object> defaultAttributes() {
     final Map<String, Object> attributes = new ConcurrentHashMap<>();
 
+    final long foundedIn = faker.number().numberBetween(1850, 2020);
+    final long disbandedIn = faker.number().numberBetween(foundedIn, 2020);
+
     attributes.put("name", faker.lorem().sentence(1, 3));
+    attributes.put("foundedIn", foundedIn);
+    attributes.put("disbandedIn", disbandedIn);
 
     return attributes;
   }

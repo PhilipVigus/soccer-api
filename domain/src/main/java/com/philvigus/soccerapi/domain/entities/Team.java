@@ -13,6 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "teams")
 public class Team {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,4 +21,10 @@ public class Team {
 
   @Column(name = "name")
   private String name;
+
+  @Column(name = "founded_in")
+  private Long foundedIn;
+
+  @Column(name = "disbanded_in")
+  private Long disbandedIn;
 }
