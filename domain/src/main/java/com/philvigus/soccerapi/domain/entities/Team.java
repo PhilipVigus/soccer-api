@@ -21,4 +21,10 @@ public class Team {
 
   @Column(name = "name")
   private String name;
+
+  @Column(name = "founded_in")
+  private Long foundedIn;
+
+  @Column(name = "disbanded_in")
+  private Long disbandedIn;
 }
