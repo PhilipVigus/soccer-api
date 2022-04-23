@@ -1,13 +1,11 @@
 package com.philvigus.soccerapi.dataimports.services;
 
-import java.util.List;
-
 /** The TeamImporterService interface. */
 public interface TeamImporterService {
   /**
-   * Import teams.
+   * Imports a team.
    *
-   * @param data the data to import the teams from
+   * @param data the data to import the team from
    */
-  void importTeams(List<String> data);
+  void importTeam(String[] data);
 }
